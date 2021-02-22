@@ -10,8 +10,9 @@ const expressSession = require('express-session')
 
 //Set up default mongoose connection
 // var mongoDB = 'mongodb://127.0.0.1/grocery_catalog';
+var mongoDB = 'mongodb://127.0.0.1/test';
 let cataloger_db = "mongodb+srv://shopper1:shopper1password@cluster0.rurok.mongodb.net/test"
-mongoose.connect(cataloger_db, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(mongoDB, {useNewUrlParser: true, useUnifiedTopology: true});
 
 //Get the default connection
 var db = mongoose.connection;
@@ -20,10 +21,11 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 
-
+// import all routes
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var catalogRouter = require('./routes/catalog');
+var taskRouter = require('./routes/task');
 
 var app = express();
 app.use(function(req, res, next) {
@@ -56,8 +58,10 @@ app.use(bodyParser.json());
 app.use(expressSession({
   secret:'fritz the cat'
 }))
-// 
+
+// point to assets in public directory 
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 global.loggedIn = null
 
@@ -70,6 +74,7 @@ app.use('*',(req,res,next)=>{
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/catalog', catalogRouter);
+app.use('/tasks', taskRouter);
 app.use((req,res) => res.render('404'))
 
 // catch 404 and forward to error handler
