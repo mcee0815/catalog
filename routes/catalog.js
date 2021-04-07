@@ -9,6 +9,7 @@ const authMiddleware = require('../middleware/authMiddleware');
 /* GET the catalog. */
 router.get('/', catalogCtrl.catalog_list);
 
+
 // filters
 router.get('/lowstock',catalogCtrl.catalog_lowstock)
 router.get('/outofstock',catalogCtrl.catalog_outofstock)

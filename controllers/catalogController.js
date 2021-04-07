@@ -8,6 +8,7 @@ const {validationResult } = require('express-validator');
 exports.catalog_list = async (req, res) => {
     //res.send('NOT IMPLEMENTED: catalog list');
     const products = await Product.find({})
+    // res.render('index',{products})
     res.render('index',{products})
 };
 exports.catalog_lowstock = async(req,res) => {

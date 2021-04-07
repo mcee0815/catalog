@@ -1,24 +1,24 @@
 
   <%- include('layouts/header'); -%>
   <%- include('layouts/navbar'); -%>
-  
-<div class="container d-flex justify-content-around">
-  
-  <div class="col-md-4  d-flex align-items-center ">
-    <div class="mx-auto ">
-      <h1 class="display-2 ">Cata<span class="font-weight-light">log</span></h1>
-      <hr>
-      <h3 class="text-center font-weight-light">Storage Software</h3>
-      <a href="/catalog" class="btn btn-primary btn-block badge-pill btn-lg mt-3 my-btn-boxshadow">see items    <svg id="i-search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
-        <circle cx="14" cy="14" r="12" />
-        <path d="M23 23 L30 30"  />
-    </svg></a>
+
+  <!-- Main Content -->
+    <div class="my-content container">
+            <div class="jumbotron col-md-10 d-flex flex-column mx-auto my-btn-boxshadow"> 
+                <div class="col-md-6 mx-auto">
+                    <h1 class="display-3 text-center ">Catalog</h1>
+                    <h5 class=" text-center ">Stock Inventory management </h5>
+                    <img class="img-fluid" src="images/cataloger_screenshot.jpg" alt="" >
+                </div>
+                
+                
+                <div class="row justify-content-center mt-3">
+                    <a href="users/login" class="btn btn-success btn-sm mx-2 my-btn-boxshadow">Log In</a>
+                    <a href="users/create" class="btn btn-success btn-sm mx-2 my-btn-boxshadow">SignUp</a>
+                </div>
+            </div>
     </div>
-  </div>
-  
-  <div class="col-md-6 offset-md-1 d-none d-md-block bg-white">
-    <div class="my-opacity"><img src="/images/cataloger_screenshot.jpg" class="img-fluid"></div>
-  </div>
-</div>
-    <%- include('layouts/footer'); -%>
-    <%- include('layouts/scripts'); -%> 
+    
+    
+    <%- include('layouts/scripts'); -%>
+

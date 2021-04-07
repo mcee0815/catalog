@@ -7,11 +7,13 @@ var bodyParser = require('body-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose')
 const expressSession = require('express-session')
+const dotenv = require("dotenv")
+dotenv.config()
+
 
 //Set up default mongoose connection
-// var mongoDB = 'mongodb://127.0.0.1/grocery_catalog';
-var mongoDB = 'mongodb://127.0.0.1/test';
-let cataloger_db = "mongodb+srv://shopper1:shopper1password@cluster0.rurok.mongodb.net/test"
+// var mongoDB = 'mongodb://127.0.0.1/test';
+let cataloger_db = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.rurok.mongodb.net/test`
 mongoose.connect(cataloger_db, {useNewUrlParser: true, useUnifiedTopology: true});
 
 //Get the default connection
