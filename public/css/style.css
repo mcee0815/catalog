@@ -1,7 +1,6 @@
 body {
   /* background-color: burlywood; */
-  background: linear-gradient(
-8deg
+  background: linear-gradient(8deg
 , #bf6a11a6, transparent);
   /* background-image: url("/images/poly.jpg"); */
   font: 17px "Lucida Grande", Helvetica, Arial, sans-serif;

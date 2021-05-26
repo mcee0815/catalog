@@ -9,11 +9,13 @@ const mongoose = require('mongoose')
 const expressSession = require('express-session')
 const dotenv = require("dotenv")
 dotenv.config()
+let cataloger_db = require('./db')
+
 
 
 //Set up default mongoose connection
 // var mongoDB = 'mongodb://127.0.0.1/test';
-let cataloger_db = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.rurok.mongodb.net/test`
+//  cataloger_db = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.rurok.mongodb.net/test`
 mongoose.connect(cataloger_db, {useNewUrlParser: true, useUnifiedTopology: true});
 
 //Get the default connection
